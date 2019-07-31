@@ -68,13 +68,24 @@ html, body {
 	text-decoration-line: none;
 }
 
+.expbox(){
+	padding: 1rem;
+	border-radius: 1rem;
+	font-weight: bold;
+}
+
 @regfont: 1.6rem;
 
 h1 {
 	font-size: 5rem;
 }
 
-p, span {
+h2 {
+	font-size: 3rem;
+	font-weight: 50;
+}
+
+p, span, li, a{
 	font-size: @regfont;
 }
 
@@ -82,20 +93,39 @@ p, span {
 	width: 90rem;
 	height: 100%;
 	margin: auto;
-	border: .2rem solid black;
+	@media (max-width: 500px){
+		width: 100%;
+	}
 	header {
 		.flexbox();
-
+		@media (max-width: 500px){
+			width: 100%;
+			margin: 0;
+			display: flex;
+		}
 		nav {
 			.flexbox();
 			width: 100%;
 			justify-content: flex-end;
+			@media (max-width: 500px){
+				width: 100%;
+				flex-flow: column nowrap;
+				align-content: center;
+				justify-content: center;
+			}
 
 			a {
 				font-size: @regfont;
 				margin: 1rem 1.5rem;
 				.noline();
 				color: black;
+				@media (max-width: 500px){
+					border-top: 1px solid gray;
+					width: 100%;
+					margin: 0;
+					text-align: center;
+					padding: 1rem;
+				}
 			}
 
 			a:hover {
@@ -106,20 +136,30 @@ p, span {
 
 	.banner {
 		margin-top: 3rem;
-		background: darkgray;
+		background: gray;
 		padding-bottom: 2rem;
 		border: 0rem solid white;
 		border-radius: 1rem;
 		padding-bottom: 4rem;
+		@media (max-width: 500px){
+			width: 100%;
+			padding-top: .5rem;
+		}
 
 		img {
 			height: 20rem;
 			margin: 3rem 0rem 0rem 8rem;
-			border: .1rem solid black;
+			border-radius: 10rem;
+			@media (max-width: 500px){
+				display: none;
+			}
 		}
 
 		h1 {
 			margin: 1rem 0rem 0rem 8rem;
+			@media (max-width: 500px){
+				margin: 3rem;
+			}
 		}
 
 		p {
@@ -131,12 +171,12 @@ p, span {
 			border: .2rem solid black;
 			border-radius: .5rem;
 			padding: 1rem;
-			background: gray;
+			background: darkgray;
 			
 		}
 
 		.button:hover {
-			background: darkgray;
+			background: gray;
 		}
 
 		a {
@@ -150,6 +190,85 @@ p, span {
 
 	}
 
+	.about {
+		.flexbox();
+		margin-top: 2rem;
+		justify-content: space-between;
+
+		.aboutme {
+			width: 40%;
+			margin: 0 auto;
+			margin-top: 5rem;
+			p {
+				margin-top: .5rem;
+			}
+		}
+
+		.skills {
+			width: 49%;
+			background: #a82929;
+			border-radius: 1rem;
+			padding: .5rem;
+			ul {
+				margin-top: .5rem;
+				list-style-type: disc;
+				list-style-position: inside;
+				li {
+					
+					padding: 1rem;
+				}
+			}
+		}
+	}
+
+	.exphead {
+		margin-top: 2rem;
+	}
+
+	.experience {
+		.flexbox();
+		justify-content: space-evenly;
+		margin-top: 2rem;
+
+		.sonic {
+			width: 30%;
+			margin-right: .5rem;
+			background: gray;
+			.expbox();
+		}
+
+		.blueskysat {
+			width: 30%;
+			margin: 0rem .5rem 0rem .5rem;
+			background: #a82929;
+			.expbox();
+		}
+
+		.hamilton {
+			width: 30%;
+			margin: 0rem .5rem 0rem .5rem;
+			background: gray;
+			.expbox();
+		}
+	}
+
+	.contact {
+		margin-top: 2rem;
+		a{
+			.noline();
+			color: black;
+		}
+
+		a:hover {
+			color: #a82929;
+		}
+	}
+	
+	footer {
+		text-align: center;
+		font-weight: bold;
+		margin: 5rem 0rem;
+	}
 	
 }
 

@@ -139,19 +139,36 @@ body {
 h1 {
   font-size: 5rem;
 }
+h2 {
+  font-size: 3rem;
+  font-weight: 50;
+}
 p,
-span {
+span,
+li,
+a {
   font-size: 1.6rem;
 }
 .content {
   width: 90rem;
   height: 100%;
   margin: auto;
-  border: 0.2rem solid black;
+}
+@media (max-width: 500px) {
+  .content {
+    width: 100%;
+  }
 }
 .content header {
   display: flex;
   flex-flow: row wrap;
+}
+@media (max-width: 500px) {
+  .content header {
+    width: 100%;
+    margin: 0;
+    display: flex;
+  }
 }
 .content header nav {
   display: flex;
@@ -159,30 +176,63 @@ span {
   width: 100%;
   justify-content: flex-end;
 }
+@media (max-width: 500px) {
+  .content header nav {
+    width: 100%;
+    flex-flow: column nowrap;
+    align-content: center;
+    justify-content: center;
+  }
+}
 .content header nav a {
   font-size: 1.6rem;
   margin: 1rem 1.5rem;
   text-decoration-line: none;
   color: black;
 }
+@media (max-width: 500px) {
+  .content header nav a {
+    border-top: 1px solid gray;
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    padding: 1rem;
+  }
+}
 .content header nav a:hover {
   color: gray;
 }
 .content .banner {
   margin-top: 3rem;
-  background: darkgray;
+  background: gray;
   padding-bottom: 2rem;
   border: 0rem solid white;
   border-radius: 1rem;
   padding-bottom: 4rem;
 }
+@media (max-width: 500px) {
+  .content .banner {
+    width: 100%;
+    padding-top: 0.5rem;
+  }
+}
 .content .banner img {
   height: 20rem;
   margin: 3rem 0rem 0rem 8rem;
-  border: 0.1rem solid black;
+  border-radius: 10rem;
+}
+@media (max-width: 500px) {
+  .content .banner img {
+    display: none;
+  }
 }
 .content .banner h1 {
   margin: 1rem 0rem 0rem 8rem;
+}
+@media (max-width: 500px) {
+  .content .banner h1 {
+    margin: 3rem;
+  }
 }
 .content .banner p {
   margin: 0.5rem 0rem 2rem 8rem;
@@ -192,10 +242,10 @@ span {
   border: 0.2rem solid black;
   border-radius: 0.5rem;
   padding: 1rem;
-  background: gray;
+  background: darkgray;
 }
 .content .banner .button:hover {
-  background: darkgray;
+  background: gray;
 }
 .content .banner a {
   text-decoration-line: none;
@@ -203,4 +253,80 @@ span {
 }
 .content .banner a:hover {
   color: white;
+}
+.content .about {
+  display: flex;
+  flex-flow: row wrap;
+  margin-top: 2rem;
+  justify-content: space-between;
+}
+.content .about .aboutme {
+  width: 40%;
+  margin: 0 auto;
+  margin-top: 5rem;
+}
+.content .about .aboutme p {
+  margin-top: 0.5rem;
+}
+.content .about .skills {
+  width: 49%;
+  background: #a82929;
+  border-radius: 1rem;
+  padding: 0.5rem;
+}
+.content .about .skills ul {
+  margin-top: 0.5rem;
+  list-style-type: disc;
+  list-style-position: inside;
+}
+.content .about .skills ul li {
+  padding: 1rem;
+}
+.content .exphead {
+  margin-top: 2rem;
+}
+.content .experience {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  margin-top: 2rem;
+}
+.content .experience .sonic {
+  width: 30%;
+  margin-right: 0.5rem;
+  background: gray;
+  padding: 1rem;
+  border-radius: 1rem;
+  font-weight: bold;
+}
+.content .experience .blueskysat {
+  width: 30%;
+  margin: 0rem 0.5rem 0rem 0.5rem;
+  background: #a82929;
+  padding: 1rem;
+  border-radius: 1rem;
+  font-weight: bold;
+}
+.content .experience .hamilton {
+  width: 30%;
+  margin: 0rem 0.5rem 0rem 0.5rem;
+  background: gray;
+  padding: 1rem;
+  border-radius: 1rem;
+  font-weight: bold;
+}
+.content .contact {
+  margin-top: 2rem;
+}
+.content .contact a {
+  text-decoration-line: none;
+  color: black;
+}
+.content .contact a:hover {
+  color: #a82929;
+}
+.content footer {
+  text-align: center;
+  font-weight: bold;
+  margin: 5rem 0rem;
 }
